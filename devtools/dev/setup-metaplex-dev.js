@@ -38,6 +38,7 @@ async function setupMetaplexDev() {
   const startDate = await getStartDate()
   splittedContent[7] = `metaplex update_candy_machine -d "${startDate || '16 Sep 2021 00:00:00'}" --env devnet --keypair ~/.config/solana/candyfactory-devnet.json > ./logs/dev/candy-machine-start-date.txt`
 
+  // Re-writing and then executing the script with parameters inputted
   fs.unlinkSync('./devtools/dev/setup-metaplex-dev.sh')
   fs.writeFileSync('./devtools/dev/setup-metaplex-dev.sh', splittedContent.join(`\n`))
   shelljs.exec('sh ./devtools/dev/setup-metaplex-dev.sh')

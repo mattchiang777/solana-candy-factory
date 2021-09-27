@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 import { useState } from "react";
 import { Toaster } from 'react-hot-toast';
@@ -64,6 +65,16 @@ const Home = () => {
       <div className="flex float-right space-x-5">
         <WalletMultiButton />
         <WalletDisconnectButton />
+      </div>
+      
+      <div>
+        Hello world!
+        <h1 className="title">
+          Read{' '}
+          <Link href="/first-page">
+            <a>first page!</a>
+          </Link>
+        </h1>
       </div>
     </main>
   );
